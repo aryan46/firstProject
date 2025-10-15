@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Website — Example</title>
+  <meta name="description" content="A clean, responsive one-page website built with HTML & CSS." />
+  <style>
+    /* Simple reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#1f2937}
+
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto;padding:2rem}
+    header{background:linear-gradient(135deg,#7c3aed33,#06b6d433);backdrop-filter: blur(4px)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;display:inline-grid;place-items:center;background:#7c3aed;color:white;font-weight:800}
+    .nav-links{display:flex;gap:1rem}
+    .nav-links a{padding:.4rem .7rem;border-radius:6px;text-decoration:none;color:inherit;font-weight:600}
+    .nav-links a:hover{background:#eef2ff}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center;padding:3rem 0}
+    .hero h1{font-size:2rem;line-height:1.05;color:#111827}
+    .hero p{margin-top:.8rem;color:#4b5563}
+    .cta{margin-top:1.2rem;display:flex;gap:.8rem}
+    .btn{padding:.7rem 1rem;border-radius:8px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:#7c3aed;color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6e7f2}
+
+    /* Card */
+    .card{background:white;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06);padding:1.2rem}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+    .feature h3{margin-top:.6rem}
+    .icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:#eef2ff;font-weight:700}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:2rem 0}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    /* Contact */
+    form{display:grid;gap:.6rem}
+    input,textarea{padding:.7rem;border-radius:8px;border:1px solid #e5e7eb}
+    textarea{min-height:120px;resize:vertical}
+    .muted{color:#6b7280;font-size:.95rem}
+
+    /* Footer */
+    footer{border-top:1px solid #eef2ff;padding:1rem 0;margin-top:2rem;color:#6b7280}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .nav-links{display:none}
+      .features{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .hero h1{font-size:1.6rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">S</div>
+          <div>
+            SimpleSite
+            <div style="font-size:.85rem;color:#6b7280;font-weight:600">Clean & Responsive</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          <a href="#" class="btn btn-ghost">Sign in</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Design a simple, attractive website — fast.</h1>
+        <p>Use this template as a starting point: responsive layout, clean typography and simple components. Customize the colors, images and content to match your brand.</p>
+        <div class="cta">
+          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-ghost">View on GitHub</button>
+        </div>
+
+        <div class="features" id="features">
+          <div class="card feature">
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <div class="icon">A</div>
+              <div>
+                <h3>Accessible</h3>
+                <div class="muted">Keyboard friendly, semantic HTML.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card feature">
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <div class="icon">R</div>
+              <div>
+                <h3>Responsive</h3>
+                <div class="muted">Looks great on phones and desktops.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card feature">
+            <div style="display:flex;gap:.6rem;align-items:center">
+              <div class="icon">S</div>
+              <div>
+                <h3>Simple</h3>
+                <div class="muted">Easy to read and edit.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Intro card">
+        <h3>Quick start</h3>
+        <p class="muted">Clone this file, open in your editor, and change text, colors, or images. Replace placeholder images with your own assets.</p>
+        <ul style="margin-top:.6rem;color:#374151">
+          <li>Open <code>index.html</code></li>
+          <li>Edit content</li>
+          <li>Deploy to GitHub Pages or Netlify</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <h2 id="gallery" style="margin-top:1.2rem">Gallery</h2>
+      <p class="muted" style="margin-top:.4rem">A few sample images to show layout. Replace them with your own photos.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=60" alt="Sample image 1">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=60" alt="Sample image 2">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60" alt="Sample image 3">
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:1.6rem">
+      <h2>Contact</h2>
+      <p class="muted">Send a message and we'll get back to you.</p>
+
+      <form class="card" style="margin-top:.8rem" onsubmit="event.preventDefault();alert('Form submitted (demo)')">
+        <label class="muted">Name
+          <input type="text" placeholder="Your name" required>
+        </label>
+        <label class="muted">Email
+          <input type="email" placeholder="you@example.com" required>
+        </label>
+        <label class="muted">Message
+          <textarea placeholder="Type your message..."></textarea>
+        </label>
+        <div style="display:flex;gap:.6rem;margin-top:.6rem">
+          <button class="btn btn-primary" type="submit">Send</button>
+          <button class="btn btn-ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>© <strong>SimpleSite</strong> — 2025</div>
+      <div class="muted">Built with ❤️ • HTML & CSS</div>
+    </div>
+  </footer>
+</body>
+</html>
